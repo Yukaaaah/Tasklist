@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+100.times do |i|
+    Task.create(
+    status: "opened",
+    description: "tasktasktask",
+    due_date: "2017/03/31"
+        )
+    end

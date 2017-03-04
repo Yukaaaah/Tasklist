@@ -1,1 +1,22 @@
 <h1>Tasklist!</h1>
+
+<table >
+<thead>
+  <tr>
+    <th>Status</th>
+    <th>Description</th>
+    <th>Due_date</th>
+  </tr>
+</thead>
+<tbody>
+<% @tasks.each do |task| %>
+<tr>
+  <td><%= task.status %></td>
+  <td><%= task.description %></td>
+  <td><%= task.due_date.strftime("%Y/%m/%d") %></td>
+</tr>
+</tbody>
+
+</table>
+
+<% end %>
