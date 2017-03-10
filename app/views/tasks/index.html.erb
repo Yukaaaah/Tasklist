@@ -1,0 +1,28 @@
+<h1>Tasklist!</h1>
+
+<ul class="collection">
+
+<% @tasks.each do |task| %>
+  <li class="collection-item">
+    <%= check_box_tag(:status) %>
+        <%= label_tag(:status, "") %>
+    id:<%= task.id %>
+    <%= task.description %>
+    <%= task.due_date.strftime("%Y/%m/%d") %>
+
+    <ul class="collection">
+        <% @children.each do |child| %>
+    <% if child.parent_id == task.id %>
+        <li class="collection-item">
+            <%= check_box_tag(:status) %>
+                <%= label_tag(:status, "") %>
+                id:<%= child.id %>
+                <%= child.description %>
+                <%= child.due_date.strftime("%Y/%m/%d") %>
+        </li>
+        <% end %>        
+        <% end %>
+    </ul>
+</li>
+<% end %>
+</ul>

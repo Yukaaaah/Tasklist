@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227094651) do
+ActiveRecord::Schema.define(version: 20170310084807) do
+
+  create_table "children", force: :cascade do |t|
+    t.string   "status",      default: "opened", null: false
+    t.string   "description"
+    t.datetime "due_date"
+    t.integer  "parent_id"
+    t.string   "user_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.string   "status",      default: "opened", null: false
@@ -19,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170227094651) do
     t.datetime "due_date"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.string   "user_id"
   end
 
 end
