@@ -1,27 +1,28 @@
-<h1>Tasklist!</h1>
+<h3>Tasklist!</h3>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<!-- <%= check_box_tag 'page[freezeflag]', true, false, {} %> -->
 
 <ul class="collection">
-
-<% @tasks.each do |task| %>
+  <% @tasks.each do |task| %>
   <li class="collection-item">
-    <%= check_box_tag(:status) %>
-        <%= label_tag(:status, "") %>
+    <%= check_box_tag task.status %>
     id:<%= task.id %>
     <%= task.description %>
     <%= task.due_date.strftime("%Y/%m/%d") %>
+    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
 
     <ul class="collection">
-        <% @children.each do |child| %>
-    <% if child.parent_id == task.id %>
+      <% @children.each do |child| %>
+        <% if child.parent_id == task.id %>
         <li class="collection-item">
             <%= check_box_tag(:status) %>
                 <%= label_tag(:status, "") %>
-                id:<%= child.id %>
                 <%= child.description %>
                 <%= child.due_date.strftime("%Y/%m/%d") %>
         </li>
-        <% end %>        
         <% end %>
+      <% end %>
     </ul>
 </li>
 <% end %>

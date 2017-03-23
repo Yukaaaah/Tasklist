@@ -46,3 +46,5 @@ group :development do
 end
 
 gem 'materialize-sass', git: 'https://github.com/mkhairi/materialize-sass'
+
+gem 'devise'
