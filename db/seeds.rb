@@ -11,7 +11,7 @@
     Task.create(
     status: "opened",
     description: "tasktasktasktasktasktasktasktasktasktasktasktasktasktasktask #{i} ",
-    due_date: "2017/03/31",
+    due_date: "2017/03/31"
     )
     end
 

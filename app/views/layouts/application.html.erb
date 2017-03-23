@@ -20,7 +20,35 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
-<%= yield %>
+<header>
+    <nav>
+        <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Tasklist</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">New task</a></li>
+      </ul>
+    </div>
+    </nav>
+
+    <ul id="slide-out" class="side-nav fixed">
+          <li><a href="#!">Today</a></li>
+          <li><a href="#!">This week</a></li>
+          <li><a href="#!">All</a></li>
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Categories</a></li>
+          <li><a class="waves-effect" href="#!">Work</a></li>
+          <li><a class="waves-effect" href="#!">Study</a></li>
+          <li><a class="waves-effect" href="#!">Leisure</a></li>
+        </ul>
+</header>
+
+<main>
+    <%= yield %>
+</main>
+
+<footer>
+Yukaaaah
+</footer>
 
 </body>
 </html>
