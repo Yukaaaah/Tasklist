@@ -45,3 +45,6 @@ group :development do
   gem 'spring'
 end
 
+gem 'materialize-sass', git: 'https://github.com/mkhairi/materialize-sass'
+
+gem 'devise'

@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled 
+78492f34b4f35d0ecc1bd48704f513b5c3940ddc refs/heads/feature/simple_form_generator
+61f93f1d57080b8345b78f5dc0721abd1e57b839 refs/heads/master
+cd19e70af90d4029702ea664edc3371266c7ba57 refs/heads/v0.97.8
