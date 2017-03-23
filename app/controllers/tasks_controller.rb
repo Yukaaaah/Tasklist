@@ -5,4 +5,26 @@ def index
     @children = Child.all
 end
 
+def new
+    @task = Task.new
+end
+
+def create
+    @task = task.new(task_params)
+  if @task.save
+      flash[:notice] = 'taskが登録されました'
+      redirect_to root_path
+  else
+      flash.now[:error] = @task.errors.full_messages.first
+      render :new
+  end
+
+end
+
+  private
+  def task_params
+     params.require(:task).permit(:description, :due_date)
+  end
+
+
 end

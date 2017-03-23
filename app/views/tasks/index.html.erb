@@ -2,6 +2,8 @@
 <p class="alert"><%= alert %></p>
 <!-- <%= check_box_tag 'page[freezeflag]', true, false, {} %> -->
 
+<%= render 'tasks/form' , task: @task %>
+
 <ul class="collection">
   <% @tasks.each do |task| %>
   <li class="collection-item">
