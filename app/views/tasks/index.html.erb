@@ -2,25 +2,29 @@
 <p class="alert"><%= alert %></p>
 <!-- <%= check_box_tag 'page[freezeflag]', true, false, {} %> -->
 
+<% @task = Task.new unless @task %>
 <%= render 'tasks/form' , task: @task %>
 
 <ul class="collection">
   <% @tasks.each do |task| %>
   <li class="collection-item">
-      <%= check_box_tag(:status) %>
-          <%= label_tag(:status, "") %>
+      <%= label_tag :status, "" %>
+          <%= check_box_tag :status %>
     <%= task.description %>
     <%= task.due_date.strftime("%Y/%m/%d") %>
-    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    <a class="secondary-content">
+        <button type="new" name="child_new" class="btn-floating btn-small waves-effect waves-light red">
+            <i class="material-icons">add</i></button>
+    </a>
 
     <ul class="collection">
       <% @children.each do |child| %>
         <% if child.parent_id == task.id %>
         <li class="collection-item">
-            <%= check_box_tag(:status) %>
-                <%= label_tag(:status, "") %>
-                <%= child.description %>
-                <%= child.due_date.strftime("%Y/%m/%d") %>
+            <%= label_tag :status, "" %>
+                <%= check_box_tag :status %>
+            <%= child.description %>
+            <%= child.due_date.strftime("%Y/%m/%d") %>
         </li>
         <% end %>
       <% end %>

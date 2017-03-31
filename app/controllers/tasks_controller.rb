@@ -10,7 +10,7 @@ def new
 end
 
 def create
-    @task = task.new(task_params)
+    @task = Task.new(task_params)
   if @task.save
       flash[:notice] = 'taskが登録されました'
       redirect_to root_path
