@@ -6,20 +6,27 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+100.times do |k|
+    User.create(
+    email: "brabra@bra.com"
+    )
+end
 
 10.times do |i|
     Task.create(
     status: "opened",
     description: "tasktasktasktasktasktasktasktasktasktasktasktasktasktasktask #{i} ",
-    due_date: "2017/03/31"
+    due_date: "2017/03/31",
+    user_id: i
     )
-    end
+end
 
 100.times do |j|
     Child.create(
     status: "opened",
     description: "childchildchildchildchildchildchildchildchildchildchildchildchild #{j}",
     due_date: "2017/4/1",
-    parent_id: j % 10
+    parent_id: j % 10,
+    user_id: j
     )
 end

@@ -5,7 +5,7 @@ class ChildrenController < ApplicationController
     end
 
     def new
-        @child = Chil.new
+        @child = Child.new
     end
 
     def create
@@ -17,6 +17,10 @@ class ChildrenController < ApplicationController
           render :new
       end
 
+    end
+
+    def update
+        
     end
 
       private

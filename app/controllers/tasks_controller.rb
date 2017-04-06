@@ -7,6 +7,7 @@ end
 
 def new
     @task = Task.new
+    @task.children.build
 end
 
 def create
@@ -18,6 +19,10 @@ def create
       flash.now[:error] = @task.errors.full_messages.first
       render :new
   end
+
+end
+
+def update
 
 end
 

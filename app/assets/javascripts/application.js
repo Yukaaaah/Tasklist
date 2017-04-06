@@ -14,6 +14,7 @@
 //= require materialize-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require nested_form_fields
 //= require_tree .
 $('.datepicker').pickadate({
   selectMonths: true, // Creates a dropdown to control month
