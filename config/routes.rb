@@ -5,7 +5,5 @@ Rails.application.routes.draw do
 
   resources :tasks do
     resources :children, only:[:create, :update]
-end
-
-
+  end
 end

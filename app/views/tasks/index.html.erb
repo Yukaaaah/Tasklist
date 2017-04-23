@@ -1,6 +1,5 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<!-- <%= check_box_tag 'page[freezeflag]', true, false, {} %> -->
 
 <% @task = Task.new unless @task %>
 <%= render 'tasks/form' , task: @task %>
@@ -8,28 +7,24 @@
 <ul class="collection">
   <% @tasks.each do |task| %>
   <li class="collection-item">
-      <%= label_tag :status, "" %>
-          <%= check_box_tag :status %>
+    <%= check_box_tag :status , true, false %>
+    <%= label_tag :status, "" %>
     <%= task.description %>
     <%= task.due_date.strftime("%Y/%m/%d") %>
-    <a class="secondary-content">
-    </a>
+    <a class="secondary-content"></a>
 
     <ul class="collection">
-        <% @children.each do |child| %>
-    <li>
-         <!-- render 'children/form' , child: child -->
-    </li>
-    <% if child.parent_id == task.id %>
-        <li class="collection-item">
-            <%= label_tag :status, "" %>
-                <%= check_box_tag :status %>
-            <%= child.description %>
-            <%= child.due_date.strftime("%Y/%m/%d") %>
-        </li>
-        <% end %>
+      <% @children.each do |child| %>
+      <% if child.parent_id == task.id %>
+      <li class="collection-item">
+        <%= check_box_tag :status , true, false %>
+        <%= label_tag :status, "" %>
+        <%= child.description %>
+        <%= child.due_date.strftime("%Y/%m/%d") %>
+      </li>
+      <% end %>
       <% end %>
     </ul>
-</li>
-<% end %>
+  </li>
+  <% end %>
 </ul>
