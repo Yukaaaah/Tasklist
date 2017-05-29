@@ -1,3 +1,5 @@
+<%= link_to 'Signin with Google', user_omniauth_authorize_path(:google_oauth2) %>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <!-- <%= check_box_tag 'page[freezeflag]', true, false, {} %> -->
@@ -5,24 +7,26 @@
 <ul class="collection">
   <% @tasks.each do |task| %>
   <li class="collection-item">
-      <%= check_box_tag(:status) %>
-          <%= label_tag(:status, "") %>
+    <%= check_box_tag(:status) %>
+    <%= label_tag(:status, "") %>
     <%= task.description %>
     <%= task.due_date.strftime("%Y/%m/%d") %>
-    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    <a href="#!" class="secondary-content">
+      <i class="material-icons">grade</i>
+    </a>
 
     <ul class="collection">
       <% @children.each do |child| %>
-        <% if child.parent_id == task.id %>
-        <li class="collection-item">
-            <%= check_box_tag(:status) %>
-                <%= label_tag(:status, "") %>
-                <%= child.description %>
-                <%= child.due_date.strftime("%Y/%m/%d") %>
-        </li>
-        <% end %>
+      <% if child.parent_id == task.id %>
+      <li class="collection-item">
+        <%= check_box_tag(:status) %>
+        <%= label_tag(:status, "") %>
+        <%= child.description %>
+        <%= child.due_date.strftime("%Y/%m/%d") %>
+      </li>
+      <% end %>
       <% end %>
     </ul>
-</li>
-<% end %>
+  </li>
+  <% end %>
 </ul>

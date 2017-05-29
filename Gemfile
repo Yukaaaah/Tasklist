@@ -52,3 +52,5 @@ end
 gem 'materialize-sass', git: 'https://github.com/mkhairi/materialize-sass'
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
